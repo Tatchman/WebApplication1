@@ -37,6 +37,7 @@
                     <li><a href="daVinchi.aspx">Davinci Restaurant</a></li>
                     <li><a href="About.aspx">About Us</a></li>
                     <li><a href="Admin.aspx">Admin</a></li>
+                    <li><a href="AdminPages/LoginSuccess.aspx">Test Login</a></li>
                 </ul>
             </div>
             <div id="contBox" style="display:inline; float:right; width:75%">
