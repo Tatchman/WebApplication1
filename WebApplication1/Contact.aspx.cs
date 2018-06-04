@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Mail;
-using System.Data;
 using System.Net.Mail;
 using System.Text;
 
@@ -17,17 +11,15 @@ namespace WebApplication1
         {
 
         }
-
         protected void btnReset_Click(object sender, EventArgs e)
         {
             txtMail.Text = "";
             txtName.Text = "";
             txtMessage.Text = "";
         }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //Code 1 start
+            //Code for sending the message
             const string ToAddress = "Jake@gmail.com";
             SmtpClient client = new SmtpClient();
             client.Port = 587;
@@ -38,7 +30,8 @@ namespace WebApplication1
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential("Jake@gmail.com", "password");
 
-            try
+            //Try/Catch error management
+            try //Tries to send the message
             {
                 System.Net.Mail.MailMessage mm = new System.Net.Mail.MailMessage(txtMail.Text, ToAddress);
                 mm.Body = txtMessage.Text;
@@ -47,11 +40,12 @@ namespace WebApplication1
                 mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                 client.Send(mm);
             }
-            catch (Exception ex)
+            catch (Exception ex) //On failiue it displays the error message on a label
             {
                 lblError.Text = ex.Message;
             }
-            //Code 1 End
+            
         }
     }
 }
+

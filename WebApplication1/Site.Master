@@ -4,7 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>FdSc IAD 2</title>
-
     <style type="text/css">
         #linkNav li{display:inline;margin-left:20px;}
         #rDiv{width:500px;display:inline;background-color:orange;}
@@ -18,7 +17,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-
 <body>
     <div style="width:80%;margin-left:auto;margin-right:auto;">
         <div align="center">
@@ -27,6 +25,7 @@
                 <h1>Internet Application Development 2018</h1>
             </div>
         </div>
+        <%-- Navigation Bar --%>
         <form id="form1" runat="server">
             <br />
             <div style="text-align:center;">
@@ -34,19 +33,20 @@
                     <li><a href="Default.aspx">Home</a></li>
                     <li><a href="Contact.aspx">Contact Us</a></li>
                     <li><a href="Slideshow.aspx">Slide Show</a></li>
-                    <li><a href="daVinchi.aspx">Davinci Restaurant</a></li>
+                    <li><a href="daVinchi.aspx">Ore Chart</a></li>
                     <li><a href="About.aspx">About Us</a></li>
                     <li><a href="Admin.aspx">Admin</a></li>
-                    <li><a href="AdminPages/LoginSuccess.aspx">Test Login</a></li>
+                    <%--<li><a href="AdminPages/LoginSuccess.aspx">Test Login</a></li><%Test link for the login redirection %>--%>
                 </ul>
             </div>
             <div id="contBox" style="display:inline; float:right; width:75%">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
                 </asp:ContentPlaceHolder>
+                <%-- End of Navigation Bar --%>
             </div>
         </form>
         <div style="height:600px"></div>
+        <%-- Bottom banner --%>
         <div style="margin-left:auto; margin-right:auto;background-color:orange;text-align:center;">Copyright &copy 2018 Yeovil College FdSc Year 2</div>
     </div>
 </body>
