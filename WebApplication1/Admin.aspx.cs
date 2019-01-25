@@ -19,17 +19,17 @@ namespace WebApplication1
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select * from UserInformation where UserName =@Username and Password =@Password", con);
-            cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if(dt.Rows.Count > 0)
-            {
-                Response.Redirect("Contact.aspx");
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);             //Setup for the database connection for the login function.\\
+            con.Open();                                                                                                                 //Opens the database.\\
+            SqlCommand cmd = new SqlCommand("select * from UserInformation where UserName =@Username and Password =@Password", con);    //Sets a search query for finding a matching Username and Password.\\
+            cmd.Parameters.AddWithValue("@Username", txtUsername.Text);                                                                 //Takes the Username input for the query from the username input box.\\
+            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);                                                                 //Takes the password input for the query from the password input box.\\
+            SqlDataAdapter da = new SqlDataAdapter(cmd);                                                                                //Defines a new data adapter for the SQL query.\\
+            DataTable dt = new DataTable();                                                                                             //Defines a new DataTable.\\
+            da.Fill(dt);                                                                                                                //Fills the DataTable with the Username and Password.\\
+            if(dt.Rows.Count > 0)                                                                                                       //If the returned rows of the table is more than 0
+            {                                                                                                                           //the login was successful.\\
+                Response.Redirect("Contact.aspx");                                                                                      //Redirects the user to the Contact Page upon succesful login.\\
             }
             else
             {
