@@ -34,7 +34,7 @@
                     <li><a href="Contact.aspx">Contact Us</a></li>
                     <li><a href="Slideshow.aspx">Slide Show</a></li>
                     <li><a href="daVinchi.aspx">Ore Chart</a></li>
-                    <li><a href="About.aspx">About Us</a></li>
+                    <%--<li><a href="About.aspx">About Us</a></li>--%>
                     <li><a href="Admin.aspx">Admin</a></li>
                     <%--<li><a href="AdminPages/LoginSuccess.aspx">Test Login</a></li><%Test link for the login redirection %>--%>
                 </ul>

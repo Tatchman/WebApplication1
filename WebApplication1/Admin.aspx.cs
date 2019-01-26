@@ -21,7 +21,7 @@ namespace WebApplication1
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);             //Setup for the database connection for the login function.\\
             con.Open();                                                                                                                 //Opens the database.\\
-            SqlCommand cmd = new SqlCommand("select * from UserInformation where UserName =@Username and Password =@Password", con);    //Sets a search query for finding a matching Username and Password.\\
+            SqlCommand cmd = new SqlCommand("select * from Login where UserName =@Username and Password =@Password", con);    //Sets a search query for finding a matching Username and Password.\\
             cmd.Parameters.AddWithValue("@Username", txtUsername.Text);                                                                 //Takes the Username input for the query from the username input box.\\
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);                                                                 //Takes the password input for the query from the password input box.\\
             SqlDataAdapter da = new SqlDataAdapter(cmd);                                                                                //Defines a new data adapter for the SQL query.\\
@@ -29,7 +29,7 @@ namespace WebApplication1
             da.Fill(dt);                                                                                                                //Fills the DataTable with the Username and Password.\\
             if(dt.Rows.Count > 0)                                                                                                       //If the returned rows of the table is more than 0
             {                                                                                                                           //the login was successful.\\
-                Response.Redirect("Contact.aspx");                                                                                      //Redirects the user to the Contact Page upon succesful login.\\
+                Response.Redirect("About.aspx");                                                                                      //Redirects the user to the Contact Page upon succesful login.\\
             }
             else
             {
